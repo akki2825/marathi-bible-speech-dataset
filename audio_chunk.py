@@ -19,7 +19,7 @@ if __name__ == "__main__":
     audio_file = args["--audio-file"]
     syncmap_file = args["--syncmap-file"]
 
-    newAudio = AudioSegment.from_mp3(audio_file)
+    new_audio = AudioSegment.from_mp3(audio_file)
 
     with open(syncmap_file, 'r') as f:
         data = json.load(f)
@@ -28,7 +28,7 @@ if __name__ == "__main__":
     for item in data["fragments"]:
         t1 = float(item['begin']) * 1000
         t2 = float(item['end']) * 1000
-        new = newAudio[t1:t2]
+        chunk = new_audio[t1:t2]
         ### Change the path of the output folder to your wish. replace `data/` with whatever you want.
-        new.export("data/" + str(count) + '.mp3', format="mp3")
+        chunk.export("data/" + str(count) + '.mp3', format="mp3")
         count+=1
