@@ -1,0 +1,24 @@
+#!/bin/sh
+
+echo "Welcome!"
+
+echo "args: -a audio file; -t text file; -s syncmap file"
+
+## pass in args
+while getopts a:t:s: option
+do
+case "${option}"
+in
+a) AUDIO_FILE=${OPTARG};;
+t) TEXT_FILE=${OPTARG};;
+s) SYNCMAP_FILE=${OPTARG};;
+esac
+done
+
+echo "Alignment starts now! Sit back and enjoy!"
+python3 aligner.py --audio-file $AUDIO_FILE --text-file $TEXT_FILE --syncmap-file $SYNCMAP_FILE
+
+echo "Yay!! are you ready to them mp3s your way. Go Zoomer!"
+python3 audio_chunk.py --syncmap-file $SYNCMAP_FILE --audio-file $AUDIO_FILE
+
+echo "kek bai"
