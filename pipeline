@@ -1,10 +1,10 @@
 #!/bin/sh
+usage="$(basename "$0") [-a] [-t] [-s] -- program to align and get audio chunks
+where:
+    -a  pass the path of the audio file
+    -t  pass the path of the text file
+    -s  add the path where you want the syncmap to be"
 
-echo "Welcome!"
-
-echo "args: -a audio file; -t text file; -s syncmap file"
-
-## pass in args
 while getopts a:t:s: option
 do
 case "${option}"
@@ -15,6 +15,7 @@ s) SYNCMAP_FILE=${OPTARG};;
 esac
 done
 
+echo $AUDIO_FILE "this is the syncmap file"
 echo "Alignment starts now! Sit back and enjoy!"
 python3 aligner.py --audio-file $AUDIO_FILE --text-file $TEXT_FILE --syncmap-file $SYNCMAP_FILE
 
