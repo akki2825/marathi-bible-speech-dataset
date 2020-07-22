@@ -31,7 +31,7 @@ This will spit out audio chunk corresponding to the sentence-aligned text.
 
 ### Filtering IPAs
 
-Filtering IPAs from the audio-ipas file.
+Filtering IPAs from the audio-ipas file. Run:
 
 ```
 python filter_ipas.py --help
