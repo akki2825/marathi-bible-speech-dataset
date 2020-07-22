@@ -27,3 +27,12 @@ python audio_chunk.py -h
 ```
 
 This will spit out audio chunk corresponding to the sentence-aligned text.
+
+
+### Filtering IPAs
+
+Filtering IPAs from the audio-ipas file.
+
+```
+python filter_ipas.py --help
+```
