@@ -5,9 +5,9 @@ Usage:
     filter_ipas.py --input-file=<i> --ipas-lst=<il>,<il> --output-file=<o>
 
 Options:
-    --input-file=<i>        Audio ipa aligned input file in `txt` format
+    --input-file=<i>            Audio ipa aligned input file in `txt` format
     --ipas-lst=<il>,<il>        List of ipas you want to filter. Eg: mh,nh
-    --output-file=<o>       Output file for the filtered audio-ipa aligned sentences
+    --output-file=<o>           Output file for the filtered audio-ipa aligned sentences
 """
 from docopt import docopt
 from filter import filter_ipas
